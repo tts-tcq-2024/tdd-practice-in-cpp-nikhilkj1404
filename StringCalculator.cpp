@@ -6,9 +6,10 @@ int StringCalculator::add(const std::string& input) {
     if (isEmptyOrZero(input)) {
         return 0;
     }
-    std::string normalizedInput = normalizeDelimiters(input);
-    checkForNegativeNumbers(normalizedInput);
-    return sumOfNumbers(normalizedInput);
+    std::string processedInput = handleCustomDelimiter(input);
+    processedInput = normalizeDelimiters(processedInput);
+    checkForNegativeNumbers(processedInput);
+    return sumOfNumbers(processedInput);
 }
 
 bool StringCalculator::isEmptyOrZero(const std::string& input) {
@@ -42,4 +43,14 @@ std::string StringCalculator::normalizeDelimiters(const std::string& input) {
     std::string result = input;
     std::replace(result.begin(), result.end(), '\n', ',');
     return result;
+}
+
+std::string StringCalculator::handleCustomDelimiter(const std::string& input) {
+    if (input.substr(0, 2) == "//") {
+        std::string delimiter = input.substr(2, input.find('\n') - 2);
+        std::string rest = input.substr(input.find('\n') + 1);
+        std::replace(rest.begin(), rest.end(), delimiter[0], ',');
+        return rest;
+    }
+    return input;
 }
