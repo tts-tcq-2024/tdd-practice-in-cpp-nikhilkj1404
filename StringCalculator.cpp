@@ -20,7 +20,10 @@ int StringCalculator::sumOfNumbers(const std::string& input) {
     std::string number;
     int sum = 0;
     while (std::getline(stream, number, ',')) {
-        sum += std::stoi(number);
+        int num = std::stoi(number);
+        if (num <=1000) {
+         sum += num;
+        }
     }
     return sum;
 }
