@@ -1,5 +1,6 @@
 #include "StringCalculator.h"
 #include <sstream>
+#include <algorithm>
  
 int StringCalculator::add(const std::string& input) {
     if (isEmptyOrZero(input)) {
@@ -31,4 +32,10 @@ void StringCalculator::checkForNegativeNumbers(const std::string& input) {
             throw std::runtime_error("Negative numbers not allowed");
         }
     }
+}
+
+std::string StringCalculator::normalizeDelimiters(const std::string& input) {
+    std::string result = input;
+    std::replace(result.begin(), result.end(), '\n', ',');
+    return result;
 }
