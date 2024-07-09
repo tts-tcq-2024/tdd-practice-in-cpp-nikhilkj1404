@@ -7,8 +7,8 @@ int StringCalculator::add(const std::string& input) {
         return 0;
     }
     std::string normalizedInput = normalizeDelimiters(input);
-    checkForNegativeNumbers(input);
-    return sumOfNumbers(input);
+    checkForNegativeNumbers(normalizedInput);
+    return sumOfNumbers(normalizedInput);
 }
 
 bool StringCalculator::isEmptyOrZero(const std::string& input) {
