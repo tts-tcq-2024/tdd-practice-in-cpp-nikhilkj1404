@@ -21,7 +21,7 @@ TEST(StringCalculatorAddTests, ExpectZeroForSingleZero) {
 
 TEST(StringCalculatorAddTests, ExpectSumForTwoNumbers) {
     int expectedresult = 3;
-   std::string input = "1,2";
+    std::string input = "1,2";
     StringCalculator objUnderTest;
     int result = objUnderTest.add(input);
 
