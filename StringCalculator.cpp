@@ -6,6 +6,7 @@ int StringCalculator::add(const std::string& input) {
     if (isEmptyOrZero(input)) {
         return 0;
     }
+    std::string normalizedInput = normalizeDelimiters(input);
     checkForNegativeNumbers(input);
     return sumOfNumbers(input);
 }
