@@ -12,6 +12,7 @@ private:
  int sumOfNumbers(const std::string& input);
  void checkForNegativeNumbers(const std::string& input);
  std::string normalizeDelimiters(const std::string& input);
+ std::string handleCustomDelimiter(const std::string& input);
 };
  
 #endif // STRINGCALCULATOR_H
