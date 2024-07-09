@@ -5,7 +5,7 @@ int StringCalculator::add(const std::string& input) {
     if (isEmptyOrZero(input)) {
         return 0;
     }
-    return sumofNumbers(input);
+    return sumOfNumbers(input);
 }
 
 bool StringCalculator::isEmptyOrZero(const std::string& input) {
