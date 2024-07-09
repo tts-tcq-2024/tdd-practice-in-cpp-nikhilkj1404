@@ -6,6 +6,10 @@
 class StringCalculator {
 public:
     int add(const std::string& input);
+
+private:
+ bool isEmptyOrZero(const std::string& input);
+ int somOfNumbers(const std::string& input);
 };
  
 #endif // STRINGCALCULATOR_H
