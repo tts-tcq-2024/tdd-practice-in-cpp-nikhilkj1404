@@ -9,7 +9,7 @@ public:
 
 private:
  bool isEmptyOrZero(const std::string& input);
- int somOfNumbers(const std::string& input);
+ int sumOfNumbers(const std::string& input);
 };
  
 #endif // STRINGCALCULATOR_H
