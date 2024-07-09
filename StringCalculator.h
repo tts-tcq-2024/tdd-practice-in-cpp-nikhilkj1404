@@ -10,6 +10,7 @@ public:
 private:
  bool isEmptyOrZero(const std::string& input);
  int sumOfNumbers(const std::string& input);
+ void checkForNegativeNumbers(const std::string& input);
 };
  
 #endif // STRINGCALCULATOR_H
