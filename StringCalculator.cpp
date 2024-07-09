@@ -5,6 +5,7 @@ int StringCalculator::add(const std::string& input) {
     if (isEmptyOrZero(input)) {
         return 0;
     }
+    checkForNegativeNumbers(input);
     return sumOfNumbers(input);
 }
 
@@ -20,4 +21,14 @@ int StringCalculator::sumOfNumbers(const std::string& input) {
         sum += std::stoi(number);
     }
     return sum;
+}
+
+void StringCalculator::checkForNegativeNumbers(const std::string& input) {
+    std::istringstream stream(input);
+    std::string number;
+    while (std::getline(stream, number, ',')) {
+        if (std::stoi(number) < 0) {
+            throw std::runtime_error("Negative numbers not allowed");
+        }
+    }
 }
